@@ -1,0 +1,14 @@
+def min_value(arr):
+    min = arr[0]
+    for value in arr[1:]:
+        if value < min:
+            min = value
+    return min
+    
+def unit_test(test_cases):
+    for key, value in test_cases.items():
+        min = min_value(value[1])
+        if min == value[0]:
+            print(f'Test case {value[1]},{value[0]} successful')
+        else:
+            print(f'Test case {value[1]},{value[0]} unsuccessful')
