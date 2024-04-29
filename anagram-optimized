@@ -1,0 +1,27 @@
+def is_anagram(word1, word2):
+    truth = False
+    wd1 = sorted(list(word1))
+    wd2 = sorted(list(word2))
+    l1 = len(wd1)
+    l2 = len(wd2)
+    if l1 != l2:
+        pass
+    else:
+        truth = True
+    return truth
+     
+def unit_test(test_cases):
+    for key, value in test_cases.items():
+        truth_value = is_anagram(value[0][0],value[0][1])
+        if truth_value == value[1]:
+            print(f'{value[0][0]} and {value[0][1]}, {key} Passed')
+        else:
+            print(f'{value[0][0]} and {value[0][1]} , {key} Failed')
+test_cases_dic = {
+    'case0':[['eat', 'ate'], True],
+    'case1':[['yes', 'wes'], False],
+    'case2':[['Today','Tomorrow'], False],
+    'case3':[['silent','listen'], True],
+    'case4':[['races','cares'], True]
+}
+unit_test(test_cases_dic)
